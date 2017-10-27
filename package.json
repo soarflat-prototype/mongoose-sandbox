@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sake": "nodemon sake.js"
+    "sake": "nodemon sake.js",
+    "pop": "nodemon population.js"
   },
   "engines": {
     "node": ">=6.0.0 <=6.11.2"
