@@ -1,0 +1,19 @@
+{
+  "name": "mongoose-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sake": "nodemon sake.js"
+  },
+  "engines": {
+    "node": ">=6.0.0 <=6.11.2"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^4.11.12"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
