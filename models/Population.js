@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const personSchema = Schema({
+const actressSchema = Schema({
   // SchemaTypesを指定する
   // 種類は以下の通り
   // String
@@ -16,35 +16,38 @@ const personSchema = Schema({
   // ObjectIdとはMongoDBがコレクションのプライマリキー（_id）
   // として生成できるユニークな12バイトの識別子のこと
   _id: Schema.Types.ObjectId,
-  name: String,
-  // name: {
-  //   type: String,
-  //   index: true,
-  //   unique: true
-  // },
+  name: {
+    type: String,
+    index: true,
+    unique: true
+  },
   age: Number,
-  stories: [
+  products: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Story'
+      ref: 'Product'
     }
   ]
 });
 
-const storySchema = Schema({
-  author: {
+const productSchema = Schema({
+  actress: {
     type: Schema.Types.ObjectId,
-    ref: 'Person'
+    ref: 'Actress'
   },
-  title: String,
+  title: {
+    type: String,
+    index: true,
+    unique: true
+  },
   fans: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Person'
+      ref: 'Actress'
     }
   ]
 });
 
 // スキーマからモデルをコンパイルし、エクスポートする
-exports.Story = mongoose.model('Story', storySchema);
-exports.Person = mongoose.model('Person', personSchema);
+exports.Product = mongoose.model('Product', productSchema);
+exports.Actress = mongoose.model('Actress', actressSchema);
